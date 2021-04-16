@@ -11,6 +11,7 @@ const ll maxn = 1e5+1;
 const ll inf  = 1e15 ;
 const ll minf = -inf ;
 
+//Kadane's Algorithm
 int main(){
 	//     cout << a + b << '\n';
 	//Algorithm 1
@@ -49,6 +50,6 @@ int main(){
 
 	cout << best << "\n";
 	
-	
+
 	return 0;
 }
