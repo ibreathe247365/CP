@@ -21,7 +21,7 @@ int main(){
 	cin>>t;
 	for (int p = 0; p < t; ++p)
 	{
-		ll n,m,t;
+		ll n,m;
 		cin>>n>>m;
 		ll path[m*n],temp[m*n];
 		for (int i = 0; i < m*n; ++i)
@@ -32,37 +32,36 @@ int main(){
 			temp[i]=num;
 		}
 		sort(path,path+m*n);
-		// for (int i = 0; i < m*n; ++i)
-		// {
-		// 	cout<<path[i]<<" ";
-			
-		// 	if ((i+1)%m==0)
-		// 		{
-		// 			cout<<"\n";
-		// 		}	
-		// }
 		int c=0;
-		for (int i = 0; i < m; ++i)
+		ll t,index,t2;bool flag=true;
+		for (int i = 0; i < m*n; ++i)
 		{	
-			// if (i!=0 && path[i]==path[i-1])
-			// {
-			// 	auto k = lower_bound(temp+c,temp+m*n,path[i])-temp;
-			// 	c=k;
-			// 	if (k < m*n && temp[k] == path[i]) {
-			// 	t=temp[k];temp[k]=temp[k/m*m+i];temp[k/m*m+i]=t;
-			// }
-			// }
-			
-			// else{
-				auto k = lower_bound(temp,temp+m*n,path[i])-temp;
-				if (k < m*n && temp[k] == path[i]) {
-					cout<<k;
-				// t=temp[k];temp[k]=temp[k/m*m+i];temp[k/m*m+i]=t;
-			// }
-				
+			if (path[c]==t2)
+			{
+				flag=false;
+			}
+			if (temp[i]==path[c]&&flag==true)
+			{
+				//swap i wala with i/m*m+c and c++
+				index=i/m*m+c;
+				t=temp[index];temp[index]=path[c];temp[i]=t;
+				c++;
+				i=0;
+				t2=path[c];
+
 			}
 
+			if (flag==false)
+			{
+				flag=!flag;
+			}
+
+			if (c==m)
+			{
+				break;
+			}
 		}
+
 		for (int i = 0; i < m*n; ++i)
 		{
 			cout<<temp[i]<<" ";
@@ -72,8 +71,7 @@ int main(){
 					cout<<"\n";
 				}	
 		}
-	
-	}
 
+	}
 	return 0;
 }
