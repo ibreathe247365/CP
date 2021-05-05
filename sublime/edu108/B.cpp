@@ -49,15 +49,10 @@ int main(){
 			for (int f = 0; f < index; ++f)
 			{
 				prod+=a[arr[index-1-f]]*b[arr[f]];
-				// cout<<arr[f];
+				
 			}
 
 		}
-		for (int f = 0; f < index; ++f)
-			{
-				// prod+=a[arr[index-1-f]]*b[arr[f]];
-				cout<<arr[f];
-			}
 
 		maxprod=max(maxprod,prod);
 	}
