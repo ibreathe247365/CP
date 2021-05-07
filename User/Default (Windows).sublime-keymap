@@ -1,0 +1,7 @@
+[
+    { "keys": ["ctrl+c"], "command": "cancel_build" },
+
+    { "keys": ["ctrl+x"], "command": "cut" },
+	{ "keys": ["ctrl+c"], "command": "copy" },
+	{ "keys": ["ctrl+v"], "command": "paste" },
+]
