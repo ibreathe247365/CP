@@ -35,18 +35,18 @@ int main(){
 			for (int j = A; j < i*A*B; j+=A)
 			{
 			
-			if (flag && j%(A*B)!=0 && (A*B*i-j)%(A*B)!=0)
+			if (flag && j%(A*B)!=0 && (A*B*i-j)%(A*B)!=0 && j!=A*B*i-j)
 			{
 				cout<<"YES"<<"\n";
 				cout<<j<<" " <<A*B*i-j<<" " <<A*B*i<<"\n";
 				flag=0;
 			}
-			if (flag && j%(A*B)!=0 && (A*B*i+j)%(A*B)!=0)
-			{
-				cout<<"YES"<<"\n";
-				cout<<j<<" " <<A*B*i<<" " <<A*B*i+j<<"\n";
-				flag=0;
-			}
+			// if (flag && j%(A*B)!=0 && (A*B*i+j)%(A*B)!=0 && j!=A*B*i)
+			// {
+			// 	cout<<"YES"<<"\n";
+			// 	cout<<j<<" " <<A*B*i<<" " <<A*B*i+j<<"\n";
+			// 	flag=0;
+			// }
 
 
 			}
